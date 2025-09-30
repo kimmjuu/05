@@ -1,28 +1,23 @@
 #include <stdio.h>
 
 int main(void) {
-int a, b, result;
-    char op;
+    int answer = 59;
+    int guess;
+    int trials = 0;
 
-    printf("Enter expression (ex: 2 + 5): ");
-    scanf("%d %c %d", &a, &op, &b);
+    do {
+        printf("Input a number: ");
+        scanf("%d", &guess);
+        trials++;
 
-    if(op == '+')
-        result = a + b;
-    else if(op == '-')
-        result = a - b;
-    else if(op == '*')
-        result = a * b;
-    else if(op == '/')
-        result = a / b;
-    else if(op == '%')
-        result = a % b;
-    else {
-        printf("Invalid operator\n");
-        return 0;
-    }
+        if (guess > answer)
+            printf("Too big!\n");
+        else if (guess < answer)
+            printf("Too small!\n");
+        else
+            printf("Correct! trials:%d\n", trials);
 
-    printf("%d %c %d = %d\n", a, op, b, result);
+    } while (guess != answer);
     
 	return 0;
 }
