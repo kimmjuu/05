@@ -2,18 +2,16 @@
 #include <stdlib.h>
 
 int main(void) {
-	 int n;
+ int x;
 
-    printf("Enter an integer: "); //한글 글씨 깨짐으로 인해  영문으로 코드 작성하였습니다
-    scanf("%d", &n);           
+    printf("Enter an integer: ");
+    scanf("%d", &x);
 
-    if (n > 0) {               
-        printf("Positive\n");
-    } else if (n < 0) {
-        printf("Negative\n");
-    } else {
-        printf("Zero\n");
+    if (x < 0) {
+        x = -x;
     }
 
+    printf("The absolute value is %d\n", x);
+    
 	return 0;
 }
